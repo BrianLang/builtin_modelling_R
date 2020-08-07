@@ -10,3 +10,4 @@ The goal is to create a sort of playground to explore shiny functionality.
 * Produce simple figures to visualize the relationships in the data.  
 * Create a report with the output (shinymeta?).  
 * Save and download the code which creates the report.  
+* Push to shiny.io.  
