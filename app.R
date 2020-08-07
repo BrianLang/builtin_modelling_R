@@ -1,17 +1,9 @@
-#
-# This is a Shiny web application. You can run the application by clicking
-# the 'Run App' button above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
 
 library(shiny)
 library(dplyr)
 library(jtools)
 
-# Define UI for application that draws a histogram
+
 
 ui = fluidPage(
     fluidRow(
@@ -27,7 +19,7 @@ ui = fluidPage(
                width = 9)
     ),
     column(shiny::br(),
-    fluidRow(textOutput("description")), width = 12),
+    fluidRow(textOutput("formula")), width = 12),
     fluidRow(verbatimTextOutput("modeloutput"))
 )
 
@@ -59,7 +51,7 @@ server = function(input, output) {
                                                    filter(Item == input$dataset) %>%
                                                    select("Title")))
 
-    output$description <- renderText({paste0("formula: ", input$dependent,
+    output$formula <- renderText({paste0("formula: ", input$dependent,
                                              " ~ ",
                                              paste0(input$independent, collapse = " + "))})
 
